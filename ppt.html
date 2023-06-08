@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>priedra pael o tijera</title>
+    <script>
+  
+        // funcion para las alertas
+        function alertadeeleciones(quienElige, Eleccion){
+        if (eleccion==1){ 
+        alert("El "+quienElige+" eligio"+"eligio piedra")
+          } else if 
+           (eleccion==2){ 
+        alert("El "+quienElige+" eligio"+"eligio papel")
+          } else if 
+           (eleccion==3){  
+        alert("El "+quienElige+" eligio"+"eligio tijera")
+          } else  {
+         alert("El "+quienElige+" eligio"+"eligio mal")
+          } }
+
+          // funcion numero aleatorio
+          function numeroaAleatorio(min,max){ 
+            return  Math.floor(Math.random()*(max-min+1)+min)}
+
+        //funcion paar elgir el ganador
+        function quienGanaentre(eleccionjugador,eleccionpc ){ 
+        if (eleccionjugador==leccionpc){
+          alert("empate ")
+        }  else if  (eleccionjugador==1 && eleccionpc==3){
+          alert("ganaste ") 
+        } if (eleccionjugador== 2 && leccionpc==1){
+          alert("ganado r")
+        }  else if  (eleccionjugador==3 && eleccionpc==2){
+          alert("ganaste ")
+      }else
+      alert("perdiste ")}
+         
+      //elccion del jugador
+
+      let eleccionjugador = 0
+      eleccionjugador = prompt("elige:1 para piedra,2 para papel, 3 para tijera")
+      alertadeeleciones("jugador", eleccionjugador)
+      // leccion pc
+      let eleccionpc = 0
+      eleccionpc = numeroaAleatorio(1.3)
+      alertadeeleciones("jugador", eleccionpc)
+
+      quienGanaentre(eleccionjugador, eleccionpc)
+
+
+       
+    
+        
+    
+
+         
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
