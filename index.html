@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <pokemon>Document</pokemon>
+    <script src="./js/pokemon.js"></script>
+</head>
+<body>
+   <section id = "seleccionar - pokemon">   
+      <h2>eligue un pokemon</h2>
+          <label for="charmander">charmander</label>
+          <input type="radio" name="pokemon" id="charmander">
+          <label for="squirtle">squirtle</label>
+          <input type="radio" name="pokemon" id="squirtle">
+          <label for="bulbasaur">bulbasaur</label>
+          <input type="radio" name="pokemon" id="bulbasaur">
+          <button id = "boton-seleccionar" >seleccionar</button>
+ </section> 
+
+ <section id ="selccionar-ataque"> 
+
+ <h2>elige tu ataque </h2>
+ <p>su pokemon  <span id ="macota-jugador"></span> tiene <span>3</span> vidas </p>
+ <p>el pokemon <span id = "pokemon-enemigo" ></span>  el enemigo tiene <span>3</span> vidas </p>
+
+ <p>
+    <button>fuego</button>
+    <button>agua</button>
+    <button>tierra</button>
+ </p>
+</section>
+
+ <section id="mensajes">
+    <p> Tu pokemon ataco con fuego, la mascota del enemigo tataco con tierra. ganaste </p>
+ </section>
+
+ <section id="reiniciar">
+    <button>reiniciar</button>
+ </section>
+
+</body>
+
+</html>
