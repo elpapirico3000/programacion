@@ -1,7 +1,8 @@
+let vidasJugador = 3
+let vidasEnemigo = 3
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
-
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.addEventListener('click', ataqueFuego)
     let botonAgua = document.getElementById('boton-agua')
@@ -57,5 +58,22 @@ function ataqueTierra(){
 
 function aleatorio(min, max){
     return Math.floor(Math.random()* (max-min +1) +min)
+}
+
+{   combate()
+}
+
+function combate(){
+    if (ataqueEnemigo == ataqueJugador){
+        crearMensaje("EMPATE")
+    } else if (ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA'){
+        crearMensaje("GANASTE")
+    } else if(ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO') {
+        crearMensaje("GANASTE")
+    } else if(ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA') {
+        crearMensaje("GANASTE")
+    } else {
+        crearMensaje("PERDISTE")
+    }
 }
 window.addEventListener('load', iniciarJuego)
