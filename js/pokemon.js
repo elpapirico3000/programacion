@@ -1,23 +1,90 @@
-function iniciarjuego(){
-    let butonmascotajugador =document.getElementById('boton-seleccionar');
-    butonmascotajugador.addEventListener("click",selecionarmascotajugador)
+let vidasJugador = 3
+let vidasEnemigo = 3
+function iniciarJuego() {
+    let botonMascotaJugador = document.getElementById('boton-mascota')
+    botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
+    let botonFuego = document.getElementById('boton-fuego')
+    botonFuego.addEventListener('click', ataqueFuego)
+    let botonAgua = document.getElementById('boton-agua')
+    botonAgua.addEventListener('click', ataqueAgua)
+    let botonTierra = document.getElementById('boton-tierra')
+    botonTierra.addEventListener('click', ataqueTierra)
+
 }
-    function selecionarmascotajugador(){
-        let inputcharmader =   document.getElementById ("charmander")
-        let inputsquirtle=   document.getElementById ("squirtle")
-        let inputbulbasaur=   document.getElementById ("bulbasaur")
 
-        if (inputcharmader.checked){
-            alert("elejiste a charmander")
-        } else if (inputsquirtle.checked){
-             alert("elejiste a aquirtle")
-        }  else if (inputbulbasaur.checked){
-            alert("elejiste a bulbasaur")
+function seleccionarMascotaJugador() {
+    let inputCharmander = document.getElementById('Charmander')
+    let inputBulbasaur = document.getElementById('Bulbasaur')
+    let inputSquirte = document.getElementById('Squirte')
+    let spanMascotaEnimigo = document.getElementById('mascota-jugador')
+    
+    if (inputCharmander.checked) {
+        spanMascotaEnimigo.innerHTML ='Charmander'
+    } else if (inputBulbasaur.checked) {
+        spanMascotaEnimigo.innerHTML = 'Bulbasaur'
+    } else if (inputSquirte.checked) {
+        spanMascotaEnimigo.innerHTML = 'Squirte'
+    } else {
+        alert('Selecciona una mascota')
+    }
+    seleccionarMascotaEnemigo()
+}
+function seleccionarMascotaEnemigo(){
+    let ataqueAletorio = aleatorio(1,3)
+    let spanMascotaEnimigo = document.getElementById('mascota-enemigo')
+    if (ataqueAletorio ==1){
+        spanMascotaEnimigo.innerHTML = 'Charmander'
+    } else if (ataqueAletorio ==2){
+        spanMascotaEnimigo.innerHTML = 'Bulbasaur'
+    } else {
+        spanMascotaEnimigo.innerHTML = 'Squirte'
+    }
+}
 
-        } else { alert("escoge un pokemo ")
+function ataqueFuego(){
+    ataqueJugador = 'FUEGO'
+    alert(ataqueJugador)
+}
 
-        }
+function ataqueAgua(){
+    ataqueJugador = 'AGUA'
+    alert(ataqueJugador)
+}
 
-    } 
+function ataqueTierra(){
+    ataqueJugador = 'TIERRA'
+    alert(ataqueJugador)
+}
 
-    window.addEventListener("load", iniciarjuego)
+function aleatorio(min, max){
+    return Math.floor(Math.random()* (max-min +1) +min)
+}
+
+{   combate()
+}
+
+function combate(){
+    let spanVidasJugador = document.getElementById('vidas-jugador')
+    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
+
+    if (ataqueEnemigo == ataqueJugador){
+        crearMensaje("EMPATE")
+    } else if (ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA'){
+        crearMensaje("GANASTE")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else if(ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO') {
+        crearMensaje("GANASTE")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else if(ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA') {
+        crearMensaje("GANASTE")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else {
+        crearMensaje("PERDISTE")
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
+
+} }
+window.addEventListener('load', iniciarJuego)
